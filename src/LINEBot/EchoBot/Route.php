@@ -70,7 +70,16 @@ class Route
 
   //              $bot->pushMessage($userId, new LINEBot\MessageBuilder\TextMessageBuilder('push'));
 
-                $replyText = $event->getText();
+//                $replyText = $event->getText("");
+                $replyText = '';
+                $replyifText = $event->getText();
+                    if ($replyifText == 'こんにちは') {
+                    $replyText = 'さえぴょん';
+                    }
+                    else {
+                    $replyText = 'tommy';
+                    }
+                
                $logger->info('Reply text: ' . $replyText);
                $resp = $bot->replyText($event->getReplyToken(), $replyText);
               $logger->info($resp->getHTTPStatus() . ': ' . $resp->getRawBody());
