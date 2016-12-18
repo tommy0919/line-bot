@@ -66,7 +66,7 @@ class Route
                     continue;
                 }
 
-                $userId = $event->getUserId();
+                $userId = $event->getUserI();
 
                 $bot->pushMessage($userId, new LINEBot\MessageBuilder\TextMessageBuilder('push'));
 
